@@ -56,10 +56,12 @@ y[0]['type']
 
 ### Error handling
 
+Modifiers:
+* `@noerr` - set `$RAISE_SUBPROC_ERROR=False` for the command.
 
-
+Examples:
 ```xsh
-$RAISE_SUBPROC_ERROR = True
+$RAISE_SUBPROC_ERROR = True  # General environment.
 if ![@noerr ls nononofile]:  # Do not raise exception in case of error.
     echo file 
 ```
