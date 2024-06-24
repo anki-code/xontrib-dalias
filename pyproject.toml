@@ -1,7 +1,7 @@
 
 [project]
 name = "xontrib-spec-mod"
-version = "0.0.1"
+version = "0.0.2"
 license = {file = "LICENSE"}
 description = "Library of xonsh subprocess specification modifiers."
 classifiers = [
@@ -21,24 +21,16 @@ authors = [
 file = "README.md"
 content-type = "text/markdown"
 
-
-
-
-
 [project.urls]
-
 Homepage = "https://github.com/anki-code/xontrib-spec-mod"
 Documentation = "https://github.com/anki-code/xontrib-spec-mod/blob/master/README.md"
 Code = "https://github.com/anki-code/xontrib-spec-mod"
 "Issue tracker" = "https://github.com/anki-code/xontrib-spec-mod/issues"
 
-
-
-
 [project.optional-dependencies]
+dict = ["demjson3"]
+yaml = ["pyyaml"]
 dev = ["pytest>=7.0"]
-
-
 
 [build-system]
 requires = [
@@ -46,18 +38,15 @@ requires = [
     "wheel",               # for bdist package distribution
 ]
 build-backend = "setuptools.build_meta"
+
 [tool.setuptools]
-
-packages = ["xontrib"]
+packages = ["xontrib.spec_mod"]
 package-dir = {xontrib = "xontrib"}
-
 platforms = ["any"]
 include-package-data = false
+
 [tool.setuptools.package-data]
-
-xontrib = ["*.xsh"]
-
-
+xontrib = ["*.py"]
 
 [tool.black]
 include = '\.pyi?$'

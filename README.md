@@ -13,7 +13,8 @@ To install use pip:
 
 ```xsh
 xpip install xontrib-spec-mod
-# or: xpip install -U git+https://github.com/anki-code/xontrib-spec-mod
+xpip install 'xontrib-spec-mod[yaml]'
+xpip install 'xontrib-spec-mod[dict]'
 ```
 
 ## Usage
