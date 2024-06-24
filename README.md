@@ -13,16 +13,26 @@ To install use pip:
 
 ```xsh
 xpip install xontrib-spec-mod
-xpip install 'xontrib-spec-mod[yaml]'
-xpip install 'xontrib-spec-mod[dict]'
+```
+Load:
+```xsh
+xontrib load spec_mod
+xpip install 'xontrib-spec-mod[dict,yaml]'
 ```
 
 ## Usage
 
-```xsh
-xontrib load spec_mod
-```
 ### Transform output to object
+
+Modifiers:
+
+* `@lines` - return list of lines.
+* `@json` - json to Python `dict`.
+* `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`. For full support install `xpip install 'xontrib-spec-mod[dict]'`.
+* `@path` - string to `pathlib.Path`.
+* `@yaml` - YAML to Python `dict`. Install `xpip install 'xontrib-spec-mod[yaml]'`.
+
+Examples:
 ```xsh
 $(@lines ls /)
 # ['/bin', '/etc', '/home']
@@ -44,6 +54,8 @@ y[0]['type']
 ```
 
 ### Error handling
+
+
 
 ```xsh
 $RAISE_SUBPROC_ERROR = True
