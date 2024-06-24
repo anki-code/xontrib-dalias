@@ -1,19 +1,19 @@
 repos:
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: ""
+    rev: "v0.4.10"
     hooks:
       - id: ruff
       - id: ruff-format
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "" # Use the sha / tag you want to point at
+    rev: "v1.10.0" # Use the sha / tag you want to point at
     hooks:
       - id: mypy
         args: [ "--allow-untyped-globals", "--ignore-missing-imports" ]
         additional_dependencies: [ types-all ]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: ""
+    rev: "v4.6.0"
     hooks:
       - id: trailing-whitespace
       - id: check-yaml
@@ -23,7 +23,7 @@ repos:
       - id: check-added-large-files
 
   - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: ""
+    rev: "v3.2.0"
     hooks:
       - id: conventional-pre-commit
         stages: [commit-msg]
