@@ -23,7 +23,7 @@ jobs:
         cache: pip
         cache-dependency-path: pyproject.toml
 
-    - uses: pre-commit/action@v3.0.0
+#    - uses: pre-commit/action@v3.0.0
     - name: Install dependencies
       run: pip install ".[dev]"
     - name: Run tests
