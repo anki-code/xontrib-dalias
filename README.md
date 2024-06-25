@@ -67,14 +67,6 @@ if ![@noerr ls nononofile]:  # Do not raise exception in case of error.
     echo file 
 ```
 
-## Development
-
-```sh
-# install pre-commit plugins and activate the commit hook
-pre-commit install
-pre-commit autoupdate
-```
-
 ## Credits
 
 This package was created with [xontrib template](https://github.com/xonsh/xontrib-template).
