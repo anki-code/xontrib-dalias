@@ -15,4 +15,5 @@ XSH.aliases['@dict'] = _mod({"output_format": lambda lines: load_as_dict('\n'.jo
 XSH.aliases['@path'] = _mod({"output_format": lambda lines: _imp.pathlib.Path(':'.join(lines))}, "Return `path` output format.")
 XSH.aliases['@yaml'] = _mod({"output_format": lambda lines: _imp.yaml.safe_load('\n'.join(lines))}, "Return `yaml` output format.")
 
+XSH.aliases['@err'] = _mod({"raise_subproc_error": True}, "Set `raise_subproc_error` to True.")
 XSH.aliases['@noerr'] = _mod({"raise_subproc_error": False}, "Set `raise_subproc_error` to False.")
