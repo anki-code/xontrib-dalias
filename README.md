@@ -13,7 +13,7 @@ To install use pip:
 
 ```xsh
 xpip install xontrib-spec-mod
-xpip install 'xontrib-spec-mod[dict,yaml]'  # Additional modifiers.
+xpip install 'xontrib-spec-mod[dict,yaml]'  # Extra decorators.
 ```
 Load:
 ```xsh
@@ -24,13 +24,15 @@ xontrib load spec_mod
 
 ### Transform output to object
 
-Modifiers:
+Default decorators:
 
 * `@lines` - return list of lines.
 * `@json` - json to Python `dict`.
+* `@path` - string to `pathlib.Path`.
+
+Extra decorators:
 * `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`. 
   Install extra support via `xpip install 'xontrib-spec-mod[dict]'`.
-* `@path` - string to `pathlib.Path`.
 * `@yaml` - YAML to Python `dict`. Install `xpip install 'xontrib-spec-mod[yaml]'`.
 
 Examples:
