@@ -46,6 +46,9 @@ $(@lines ls /)
 $(@json echo '{"a":1}')  # Try with `curl` ;)
 # dict({"a":1})
 
+docker inspect @($(@json docker ps --format json)['ID'])
+# Container info
+
 $(@path which xonsh)
 # Path('/path/to/xonsh')
 
