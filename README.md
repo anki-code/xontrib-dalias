@@ -31,9 +31,12 @@ Default decorators:
 * `@path` - string to [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html).
 
 Extra decorators:
+```xsh
+xpip install 'xontrib-spec-mod[dict,yaml]'
+```
+
 * `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`. 
-  Install extra support via `xpip install 'xontrib-spec-mod[dict]'`.
-* `@yaml` - YAML to Python `dict`. Install `xpip install 'xontrib-spec-mod[yaml]'`.
+* `@yaml` - YAML to Python `dict`.
 
 Examples:
 ```xsh
