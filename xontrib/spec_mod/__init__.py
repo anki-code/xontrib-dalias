@@ -2,7 +2,12 @@
 Library of xonsh subprocess specification modifiers e.g. ``$(@json echo '{}')``.
 """
 from xonsh.built_ins import XSH
-from xonsh.procs.specs import SpecAttrModifierAlias as _mod
+try:
+    # xonsh == 0.17.0
+    from xonsh.procs.specs import SpecAttrModifierAlias as _mod
+except:
+    # xonsh > 0.17.0
+    from xonsh.procs.specs import SpecAttrDecoratorAlias as _mod
 from xontrib.spec_mod.to_dict import load_as_dict
 
 __all__ = ()
