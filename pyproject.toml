@@ -1,7 +1,7 @@
 
 [project]
 name = "xontrib-spec-mod"
-version = "0.0.3"
+version = "0.0.4"
 license = {file = "LICENSE"}
 description = "Library of xonsh subprocess specification modifiers."
 classifiers = [
