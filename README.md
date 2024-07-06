@@ -58,7 +58,7 @@ y[0]['type']
 
 ### Error handling
 
-Modifiers:
+Default decorators:
 * `@err` - set `$RAISE_SUBPROC_ERROR=True` for the command.
 * `@noerr` - set `$RAISE_SUBPROC_ERROR=False` for the command.
 
