@@ -28,7 +28,7 @@ Default decorators:
 
 * `@lines` - return list of lines.
 * `@json` - json to Python `dict`.
-* `@path` - string to `pathlib.Path`.
+* `@path` - string to [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html).
 
 Extra decorators:
 * `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`. 
