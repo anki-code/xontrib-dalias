@@ -38,7 +38,7 @@ xpip install 'xontrib-spec-mod[dict,yaml]'
 * `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`. 
 * `@yaml` - YAML to Python `dict`.
 
-Examples:
+### Examples
 ```xsh
 $(@lines ls /)
 # ['/bin', '/etc', '/home']
