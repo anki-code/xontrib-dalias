@@ -13,6 +13,7 @@ To install use pip:
 
 ```xsh
 xpip install xontrib-spec-mod
+# or
 xpip install 'xontrib-spec-mod[dict,yaml]'  # Extra decorators.
 ```
 Load:
