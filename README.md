@@ -1,5 +1,5 @@
 <p align="center">
-Library of xonsh subprocess specification modifiers.
+Library of decorator aliases (daliases) for the xonsh shell.
 </p>
 
 <p align="center">

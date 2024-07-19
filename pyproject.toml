@@ -3,7 +3,7 @@
 name = "xontrib-dalias"
 version = "0.0.5"
 license = {file = "LICENSE"}
-description = "Library of decorator aliases for xonsh shell."
+description = "Library of decorator aliases for the xonsh shell."
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
