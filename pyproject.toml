@@ -3,7 +3,7 @@
 name = "xontrib-dalias"
 version = "0.0.5"
 license = {file = "LICENSE"}
-description = "Library of xonsh decorator aliases."
+description = "Library of decorator aliases for xonsh shell."
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -13,7 +13,7 @@ classifiers = [
     "Topic :: Terminals",
 ]
 requires-python = ">=3.8"
-dependencies = ["xonsh>=0.17.0"]
+dependencies = ["xonsh>=0.18.2"]
 authors = [
     { name = "anki-code", email = "a@a.a" },
 ]
