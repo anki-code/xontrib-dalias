@@ -1,9 +1,9 @@
 
 [project]
-name = "xontrib-spec-mod"
+name = "xontrib-dalias"
 version = "0.0.5"
 license = {file = "LICENSE"}
-description = "Library of xonsh subprocess specification modifiers."
+description = "Library of xonsh decorator aliases."
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
@@ -22,10 +22,10 @@ file = "README.md"
 content-type = "text/markdown"
 
 [project.urls]
-Homepage = "https://github.com/anki-code/xontrib-spec-mod"
-Documentation = "https://github.com/anki-code/xontrib-spec-mod/blob/master/README.md"
-Code = "https://github.com/anki-code/xontrib-spec-mod"
-"Issue tracker" = "https://github.com/anki-code/xontrib-spec-mod/issues"
+Homepage = "https://github.com/anki-code/xontrib-dalias"
+Documentation = "https://github.com/anki-code/xontrib-dalias/blob/master/README.md"
+Code = "https://github.com/anki-code/xontrib-dalias"
+"Issue tracker" = "https://github.com/anki-code/xontrib-dalias/issues"
 
 [project.optional-dependencies]
 dict = ["demjson3"]
@@ -40,7 +40,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["xontrib.spec_mod"]
+packages = ["xontrib.dalias"]
 package-dir = {xontrib = "xontrib"}
 platforms = ["any"]
 include-package-data = false

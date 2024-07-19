@@ -9,8 +9,8 @@ try:
 except:
     # xonsh == 0.17.0
     from xonsh.procs.specs import SpecAttrModifierAlias as _mod
-    
-from xontrib.spec_mod.to_dict import load_as_dict
+
+from xontrib.dalias.to_dict import load_as_dict
 
 __all__ = ()
 

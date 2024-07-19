@@ -28,5 +28,5 @@ jobs:
       run: pip install ".[dev]"
     - name: Run tests
       run: |
-        xonsh -c "xontrib load spec_mod; $(@json echo '{}')"
+        xonsh -c "xontrib load dalias; $(@json echo '{}')"
         # poetry run pytest

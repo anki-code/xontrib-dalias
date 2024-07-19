@@ -3,7 +3,7 @@ Library of xonsh subprocess specification modifiers.
 </p>
 
 <p align="center">
-If you like the idea click ⭐ on the repo and <a href="https://twitter.com/intent/tweet?text=Nice%20xontrib%20for%20the%20xonsh%20shell!&url=https://github.com/anki-code/xontrib-spec-mod" target="_blank">tweet</a>.
+If you like the idea click ⭐ on the repo and <a href="https://twitter.com/intent/tweet?text=Nice%20xontrib%20for%20the%20xonsh%20shell!&url=https://github.com/anki-code/xontrib-dalias" target="_blank">tweet</a>.
 </p>
 
 
@@ -12,13 +12,13 @@ If you like the idea click ⭐ on the repo and <a href="https://twitter.com/inte
 To install use pip:
 
 ```xsh
-xpip install xontrib-spec-mod
+xpip install xontrib-dalias
 # or
-xpip install 'xontrib-spec-mod[dict,yaml]'  # Extra decorators.
+xpip install 'xontrib-dalias[dict,yaml]'  # Extra decorators.
 ```
 Load:
 ```xsh
-xontrib load spec_mod
+xontrib load dalias
 ```
 
 ## Usage
@@ -33,7 +33,7 @@ Default decorators:
 
 Extra decorators:
 ```xsh
-xpip install 'xontrib-spec-mod[dict,yaml]'
+xpip install 'xontrib-dalias[dict,yaml]'
 ```
 
 * `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`. 
