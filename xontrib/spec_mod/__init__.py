@@ -2,17 +2,18 @@
 Library of xonsh subprocess specification modifiers e.g. ``$(@json echo '{}')``.
 """
 from xonsh.built_ins import XSH
+
 try:
-    # xonsh == 0.17.0
-    from xonsh.procs.specs import SpecAttrModifierAlias as _mod
-except:
     # xonsh > 0.17.0
     from xonsh.procs.specs import SpecAttrDecoratorAlias as _mod
+except:
+    # xonsh == 0.17.0
+    from xonsh.procs.specs import SpecAttrModifierAlias as _mod
+    
 from xontrib.spec_mod.to_dict import load_as_dict
 
 __all__ = ()
 
-_imp = type('ImpCl', (object,), {'__getattr__':lambda self, name: __import__(name)})()  # Sugar for inline import
 
 #
 # Format output
@@ -37,10 +38,10 @@ XSH.aliases['@parts'] = _mod({"output_format": _split_output}, "Output format: l
 # Return object
 #
 
-XSH.aliases['@json'] = _mod({"output_format": lambda lines: _imp.json.loads('\n'.join(lines))}, "Return `json` output format.")
+XSH.aliases['@json'] = _mod({"output_format": lambda lines: XSH.imp.json.loads('\n'.join(lines))}, "Return `json` output format.")
 XSH.aliases['@dict'] = _mod({"output_format": lambda lines: load_as_dict('\n'.join(lines))['dict']}, "Return `dict` output format.")
-XSH.aliases['@path'] = _mod({"output_format": lambda lines: _imp.pathlib.Path(':'.join(lines))}, "Return `path` output format.")
-XSH.aliases['@yaml'] = _mod({"output_format": lambda lines: _imp.yaml.safe_load('\n'.join(lines))}, "Return `yaml` output format.")
+XSH.aliases['@path'] = _mod({"output_format": lambda lines: XSH.imp.pathlib.Path(':'.join(lines))}, "Return `path` output format.")
+XSH.aliases['@yaml'] = _mod({"output_format": lambda lines: XSH.imp.yaml.safe_load('\n'.join(lines))}, "Return `yaml` output format.")
 
 #
 # Error handling
