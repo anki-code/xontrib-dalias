@@ -30,6 +30,7 @@ Default decorators:
 * `@lines` - return list of lines.
 * `@json` - json to Python `dict`.
 * `@path` - string to [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html).
+* `@parts` - split by whitespaces using xonsh lexer. It's the same as [builtin `@$()` operator](https://xon.sh/tutorial.html#command-substitution-with).
 
 Extra decorators:
 ```xsh
