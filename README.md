@@ -51,10 +51,10 @@ $(@json echo '{"a":1}')  # Try with `curl` ;)
 docker inspect @($(@json docker ps --format json)['ID'])
 # Container info
 
-$(@path which xonsh)
+$(@path which -s xonsh)
 # Path('/path/to/xonsh')
 
-$(@path which xonsh).parent
+$(@path which -s xonsh).parent
 # Path('/path/to')
 
 
