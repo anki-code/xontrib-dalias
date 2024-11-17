@@ -1,6 +1,7 @@
 """
 Library of xonsh subprocess specification modifiers e.g. ``$(@json echo '{}')``.
 """
+import os
 from xonsh.built_ins import XSH
 
 try:
