@@ -64,22 +64,7 @@ y[0]['type']
 # 'MESSAGE'
 ```
 
-### Error handling
-
-Default decorators:
-* `@err` - set `$RAISE_SUBPROC_ERROR=True` for the command.
-* `@noerr` - set `$RAISE_SUBPROC_ERROR=False` for the command.
-
-Examples:
-```xsh
-$RAISE_SUBPROC_ERROR = True  # General environment.
-if ![@noerr ls nononofile]:  # Do not raise exception in case of error.
-    echo file 
-```
-
-## Tips and tricks
-
-### Piping into decorated alias to get object
+#### Piping into decorated alias to get object
 
 ```xsh
 a = $(echo '{}' | @json cat)
@@ -92,6 +77,20 @@ aliases['@j'] = '@json cat'
 a = $(echo '{}' | @j)
 type(a)
 # dict
+```
+
+
+### Error handling
+
+Default decorators:
+* `@err` - set `$RAISE_SUBPROC_ERROR=True` for the command.
+* `@noerr` - set `$RAISE_SUBPROC_ERROR=False` for the command.
+
+Examples:
+```xsh
+$RAISE_SUBPROC_ERROR = True  # General environment.
+if ![@noerr ls nononofile]:  # Do not raise exception in case of error.
+    echo file 
 ```
 
 ## Credits
