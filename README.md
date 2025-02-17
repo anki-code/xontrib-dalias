@@ -14,7 +14,7 @@ To install use pip:
 ```xsh
 xpip install xontrib-dalias
 # or
-xpip install 'xontrib-dalias[dict,yaml]'  # Extra decorators.
+xpip install 'xontrib-dalias[dict,yaml]'  # With extra decorators.
 ```
 Load:
 ```xsh
@@ -25,22 +25,18 @@ xontrib load dalias
 
 ### Transform output to object
 
-Default decorators:
+Decorators:
 
-* `@lines` - return list of lines.
-* `@json` - json to Python `dict`.
-* `@path` - string to [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html).
-* `@parts` - split by whitespaces using xonsh lexer. It's the same as [builtin `@$()` operator](https://xon.sh/tutorial.html#command-substitution-with).
+* Default:
+    * `@lines` - return list of lines.
+    * `@json` - json to Python `dict`.
+    * `@path` - string to [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html).
+    * `@parts` - split by whitespaces using xonsh lexer. It's the same as [builtin `@$()` operator](https://xon.sh/tutorial.html#command-substitution-with).
+* Extra (`xpip install 'xontrib-dalias[dict,yaml]'`):
+    * `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`. 
+    * `@yaml` - YAML to Python `dict`.
 
-Extra decorators:
-```xsh
-xpip install 'xontrib-dalias[dict,yaml]'
-```
-
-* `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`. 
-* `@yaml` - YAML to Python `dict`.
-
-### Examples
+#### Examples
 ```xsh
 $(@lines ls /)
 # ['/bin', '/etc', '/home']
