@@ -64,19 +64,17 @@ y[0]['type']
 # 'MESSAGE'
 ```
 
-#### Piping into decorated alias to get object
+Piping into decorated alias to get object:
 
 ```xsh
-a = $(echo '{}' | @json cat)
-type(a)
-# dict
+$(echo '{"a":1}' | @json cat)
+# dict({"a":1})
 ```
 
 ```xsh
 aliases['@j'] = '@json cat'
-a = $(echo '{}' | @j)
-type(a)
-# dict
+$(echo '{"a":1}' | @j)
+# dict({"a":1})
 ```
 
 
