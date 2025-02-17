@@ -77,6 +77,23 @@ if ![@noerr ls nononofile]:  # Do not raise exception in case of error.
     echo file 
 ```
 
+## Tips and tricks
+
+### Piping into decorated alias to get object
+
+```xsh
+a = $(echo '{}' | @json cat)
+type(a)
+# dict
+```
+
+```xsh
+aliases['@j'] = '@json cat'
+a = $(echo '{}' | @j)
+type(a)
+# dict
+```
+
 ## Credits
 
 This package was created with [xontrib template](https://github.com/xonsh/xontrib-template).
