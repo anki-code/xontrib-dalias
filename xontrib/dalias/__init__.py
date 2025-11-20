@@ -32,23 +32,36 @@ def _split_output(output_lines):
         toks.extend(__xonsh__.execer.parser.lexer.split(line))
     return toks
 
-XSH.aliases['@parts'] = _mod({"output_format": _split_output}, "Output format: list of parts like in `@$()`.")
+XSH.aliases['@parts'] = _mod({"output_format": _split_output}, "Alias decorator. Output format: list of parts like in `@$()`.")
 
 
 #
 # Return object
 #
+def _output_to_path(lines):
+    """Transform list of lines to Path object or list of Paths.
+    If the path is empty the result will be None or excluded from the list.
+    """
+    if len(lines) == 0:
+        return None
+    elif len(lines) == 1:
+        line = lines[0].strip()
+        if not line:
+            return None
+        return XSH.imp.pathlib.Path(line)
+    else:
+        return [XSH.imp.pathlib.Path(l.strip()) for l in lines if l.strip()]
+XSH.aliases['@path'] = _mod({"output_format": lambda lines: _output_to_path}, "Alias decorator. Returns Path object or list of Paths. Empty line excluded.")
 
-XSH.aliases['@json'] = _mod({"output_format": lambda lines: XSH.imp.json.loads('\n'.join(lines))}, "Return `json` output format.")
-XSH.aliases['@dict'] = _mod({"output_format": lambda lines: load_as_dict('\n'.join(lines))['dict']}, "Return `dict` output format.")
-XSH.aliases['@path'] = _mod({"output_format": lambda lines: XSH.imp.pathlib.Path(':'.join(lines))}, "Return `path` output format.")
-XSH.aliases['@yaml'] = _mod({"output_format": lambda lines: XSH.imp.yaml.safe_load('\n'.join(lines))}, "Return `yaml` output format.")
+XSH.aliases['@json'] = _mod({"output_format": lambda lines: XSH.imp.json.loads('\n'.join(lines))}, "Alias decorator. Parses json and returns json object.")
+XSH.aliases['@dict'] = _mod({"output_format": lambda lines: load_as_dict('\n'.join(lines))['dict']}, "Alias decorator. Returns dict object.")
+XSH.aliases['@yaml'] = _mod({"output_format": lambda lines: XSH.imp.yaml.safe_load('\n'.join(lines))}, "Alias decorator. Parses yaml and returns dict.")
 
 #
 # Error handling
 #
 
-XSH.aliases['@err'] = _mod({"raise_subproc_error": True}, "Set `raise_subproc_error` to True.")
-XSH.aliases['@noerr'] = _mod({"raise_subproc_error": False}, "Set `raise_subproc_error` to False.")
+XSH.aliases['@err'] = _mod({"raise_subproc_error": True}, "Alias decorator. Set `raise_subproc_error` to True.")
+XSH.aliases['@noerr'] = _mod({"raise_subproc_error": False}, "Alias decorator. Set `raise_subproc_error` to False.")
 
 
