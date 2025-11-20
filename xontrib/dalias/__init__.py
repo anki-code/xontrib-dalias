@@ -51,7 +51,7 @@ def _output_to_path(lines):
         return XSH.imp.pathlib.Path(line)
     else:
         return [XSH.imp.pathlib.Path(l.strip()) for l in lines if l.strip()]
-XSH.aliases['@path'] = _mod({"output_format": lambda lines: _output_to_path}, "Alias decorator. Returns Path object or list of Paths. Empty line excluded.")
+XSH.aliases['@path'] = _mod({"output_format": _output_to_path}, "Alias decorator. Returns Path object or list of Paths. Empty line excluded.")
 
 XSH.aliases['@json'] = _mod({"output_format": lambda lines: XSH.imp.json.loads('\n'.join(lines))}, "Alias decorator. Parses json and returns json object.")
 XSH.aliases['@dict'] = _mod({"output_format": lambda lines: load_as_dict('\n'.join(lines))['dict']}, "Alias decorator. Returns dict object.")
