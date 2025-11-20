@@ -47,11 +47,21 @@ $(@json echo '{"a":1}')  # Try with `curl` ;)
 docker inspect @($(@json docker ps --format json)['ID'])
 # Container info
 
+
 $(@path which -s xonsh)
 # Path('/path/to/xonsh')
 
 $(@path which -s xonsh).parent
 # Path('/path/to')
+
+$(@path echo '/tmp1\n/tmp2')
+# [Path('/tmp1'), Path('/tmp2')]
+
+$(@path echo ' ')
+# None
+
+$(@path echo ' \n\n')
+# []
 
 
 aliases['ydig'] = '@yaml dig +yaml'  # Update `dig` via `brew install bind` to have `+yaml`.
