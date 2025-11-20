@@ -57,11 +57,11 @@ $(@path which -s xonsh).parent
 $(@path echo '/tmp1\n/tmp2')
 # [Path('/tmp1'), Path('/tmp2')]
 
-$(@path echo ' ')
+$(@path echo ' ')  # Safe
 # None
 
-$(@path echo ' \n\n')
-# []
+$(@path echo ' \n\n/tmp1')  # Safe
+# [Path('/tmp1')]
 
 
 aliases['ydig'] = '@yaml dig +yaml'  # Update `dig` via `brew install bind` to have `+yaml`.
