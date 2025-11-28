@@ -1,7 +1,7 @@
 
 [project]
 name = "xontrib-dalias"
-version = "0.0.8"
+version = "0.0.9"
 license = {file = "LICENSE"}
 description = "Library of decorator aliases for the xonsh shell."
 classifiers = [
