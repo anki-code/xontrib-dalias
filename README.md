@@ -30,10 +30,12 @@ Decorators:
 * Default:
     * `@lines` - return list of lines.
     * `@json` - json to Python `dict`.
+    * `@jsonl` - json lines to Python `list` with `dict` objects.
     * `@path` - string to [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html).
     * `@parts` - split by whitespaces using xonsh lexer. It's the same as [builtin `@$()` operator](https://xon.sh/tutorial.html#command-substitution-with).
 * Extra (`xpip install 'xontrib-dalias[dict,yaml]'`):
-    * `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`. 
+    * `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`.
+    * `@dictl` - dict-like objects (json, JavaScript object, Python dict) to Python `list` with `dict` objects.
     * `@yaml` - YAML to Python `dict`.
 
 #### Examples
@@ -43,6 +45,9 @@ $(@lines ls /)
 
 $(@json echo '{"a":1}')  # Try with `curl` ;)
 # dict({"a":1})
+
+$(@jsonl echo '{"a":1}\n{"b":2}')
+# [{'a': 1}, {'b': 2}]
 
 docker inspect @($(@json docker ps --format json)['ID'])
 # Container info
