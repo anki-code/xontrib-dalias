@@ -23,16 +23,37 @@ __all__ = ()
 XSH.aliases['@lines'] = _mod({"output_format": 'list_lines'}, "Set `list_lines` output format.")
 
 def _split_output(output_lines):
-    """Split lines by whitespaces using xonsh lexer.
-    The source code is from `xonsh.built_ins.subproc_captured_inject` (it's `@$()` operator logic).
-    """
+    toks = []
+    for line in output_lines:
+        line = line.rstrip(os.linesep)
+        toks.extend(line.split())
+    return toks
+
+def _split_lines_output(output_lines):
+    toks = []
+    for line in output_lines:
+        line = line.rstrip(os.linesep)
+        toks.append(line.split())
+    return toks
+
+def _lexer_split_output(output_lines):
     toks = []
     for line in output_lines:
         line = line.rstrip(os.linesep)
         toks.extend(__xonsh__.execer.parser.lexer.split(line))
     return toks
 
-XSH.aliases['@parts'] = _mod({"output_format": _split_output}, "Alias decorator. Output format: list of parts like in `@$()`.")
+def _lexer_split_lines_output(output_lines):
+    toks = []
+    for line in output_lines:
+        line = line.rstrip(os.linesep)
+        toks.append(__xonsh__.execer.parser.lexer.split(line))
+    return toks
+
+XSH.aliases['@split'] = _mod({"output_format": _split_output}, "Alias decorator. Output format: list of parts.")
+XSH.aliases['@split-lines'] = _mod({"output_format": _split_lines_output}, "Alias decorator. Output format: list of splitted lines.")
+XSH.aliases['@split-lexer'] = _mod({"output_format": _lexer_split_output}, "Alias decorator. Output format: list of parts by xonsh lexer (same as `@$()`).")
+XSH.aliases['@split-lexer-lines'] = _mod({"output_format": _lexer_split_lines_output}, "Alias decorator. Output format: list of splitted lines by xonsh lexer (same as `@$()`).")
 
 
 #
