@@ -27,12 +27,21 @@ xontrib load dalias
 
 Decorators:
 
+XSH.aliases['@split'] = _mod({"output_format": _split_output}, "Alias decorator. Output format: list of parts.")
+XSH.aliases['@split-lines'] = _mod({"output_format": _split_lines_output}, "Alias decorator. Output format: list of splitted lines.")
+XSH.aliases['@split-lexer'] = _mod({"output_format": _lexer_split_output}, "Alias decorator. Output format: list of parts by xonsh lexer (same as `@$()`).")
+XSH.aliases['@split-lexer-lines'] = _mod({"output_format": _lexer_split_lines_output}, "Alias decorator. Output format: list of splitted lines by xonsh lexer (same as `@$()`).")
+
+
 * Default:
     * `@lines` - return list of lines.
     * `@json` - json to Python `dict`.
     * `@jsonl` - json lines to Python `list` with `dict` objects.
     * `@path` - string to [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html).
-    * `@parts` - split by whitespaces using xonsh lexer. It's the same as [builtin `@$()` operator](https://xon.sh/tutorial.html#command-substitution-with).
+    * `@split` - split output by whitespaces.
+    * `@split-lines` - split output lines by whitespaces.
+    * `@split-lexer` - split output into parts using xonsh lexer. It's the same as [builtin `@$()` operator](https://xon.sh/tutorial.html#command-substitution-with).
+    * `@split-lexer-lines` - split output lines into parts using xonsh lexer. It's the same as [builtin `@$()` operator](https://xon.sh/tutorial.html#command-substitution-with).
 * Extra (`xpip install 'xontrib-dalias[dict,yaml]'`):
     * `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`.
     * `@dictl` - dict-like objects (json, JavaScript object, Python dict) to Python `list` with `dict` objects.
