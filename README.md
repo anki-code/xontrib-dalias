@@ -27,12 +27,6 @@ xontrib load dalias
 
 Decorators:
 
-XSH.aliases['@split'] = _mod({"output_format": _split_output}, "Alias decorator. Output format: list of parts.")
-XSH.aliases['@split-lines'] = _mod({"output_format": _split_lines_output}, "Alias decorator. Output format: list of splitted lines.")
-XSH.aliases['@split-lexer'] = _mod({"output_format": _lexer_split_output}, "Alias decorator. Output format: list of parts by xonsh lexer (same as `@$()`).")
-XSH.aliases['@split-lexer-lines'] = _mod({"output_format": _lexer_split_lines_output}, "Alias decorator. Output format: list of splitted lines by xonsh lexer (same as `@$()`).")
-
-
 * Default:
     * `@lines` - return list of lines.
     * `@json` - json to Python `dict`.
