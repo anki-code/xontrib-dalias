@@ -25,13 +25,15 @@ xontrib load dalias
 
 ### Transform output to object
 
+Note! Some decorators are already in xonsh core. Marked as [core].
+
 Decorators:
 
 * Default:
-    * `@lines` - return list of lines.
-    * `@json` - json to Python `dict`.
-    * `@jsonl` - json lines to Python `list` with `dict` objects.
-    * `@path` - string to [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html).
+    * [core] `@lines` - return list of lines.
+    * [core] `@json` - json to Python `dict`.
+    * [core] `@jsonl` - json lines to Python `list` with `dict` objects.
+    * [core] `@path` - string to [`pathlib.Path`](https://docs.python.org/3/library/pathlib.html).
     * `@split` - split output by whitespaces.
     * `@split-lines` - split output lines by whitespaces.
     * `@split-lexer` - split output into parts using xonsh lexer. It's the same as [builtin `@$()` operator](https://xon.sh/tutorial.html#command-substitution-with).
@@ -39,7 +41,7 @@ Decorators:
 * Extra (`xpip install 'xontrib-dalias[dict,yaml]'`):
     * `@dict` - dict-like object (json, JavaScript object, Python dict) to Python `dict`.
     * `@dictl` - dict-like objects (json, JavaScript object, Python dict) to Python `list` with `dict` objects.
-    * `@yaml` - YAML to Python `dict`.
+    * [core] `@yaml` - YAML to Python `dict`.
 
 #### Examples
 ```xsh
