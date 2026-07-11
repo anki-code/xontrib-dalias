@@ -25,7 +25,7 @@ xontrib load dalias
 
 ### Transform output to object
 
-Note! Some decorators are already in xonsh core. Marked as [core].
+Note! Some decorators are already in [Xonsh core](https://xon.sh/aliases.html#command-decorators). Marked as [core].
 
 Decorators:
 
